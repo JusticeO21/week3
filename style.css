@@ -1,0 +1,264 @@
+@font-face {
+    font-family: JetBrains;
+    src: url('assets/fonts/JetBrainsMono-VariableFont_wght.ttf');
+}
+
+body {
+  font-family: JetBrains;
+  background-color: #18171F;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  text-align: center;
+  flex-direction: column;
+}
+
+h1{
+  font-size: 20px;
+  color: #817D92;
+  margin: auto;
+  text-align: center;
+}
+
+.password-generator {
+  min-width: 320px;
+  padding: 20px;
+  text-align: center;
+}
+
+.output-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  background: #24232C;
+  padding: 5px;
+  height: 40px;
+}
+
+.output-container input{
+  font-weight: 600;
+  font-size: 21px;
+}
+
+#password-output {
+  width: calc(100% - 40px);
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+}
+
+#copy-btn {
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+  border:none;
+}
+
+.copy-icon {
+  fill:#A4FFAF
+}
+
+#copy-btn:hover .copy-icon{
+  fill: #FFF;
+}
+
+.arrow-icon{
+  fill: #24232C;
+  margin-left: 10px;
+}
+
+.settings {
+  margin-top: 25px;
+  background: #24232C;
+  padding: 15px;
+}
+
+.slider-labels{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lenght-slider{
+    font-size: 16px;
+}
+
+.range_{
+    width: 100%;
+}
+
+.settings .setting {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.setting {
+  margin-bottom: 10px;
+  font-size: 16px;
+  position: relative;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding-left: 35px; 
+  margin-bottom: 12px;
+  user-select: none;
+  font-weight: 600;
+  font-size:15px ;
+}
+
+/* Hide Default Checkbox */
+.custom-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Custom Checkmark */
+.custom-checkbox .checkmark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 1px solid #FFF;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: #A4FFAF; 
+  background-image: url('assets/images/icon-check.svg'); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+}
+
+.custom-checkbox .checkmark {
+  transition: background-color 0.2s, border 0.2s;
+}
+
+.strength-container{
+  position: relative;
+  height: 45px;
+  background-color: #18171F;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px; 
+  align-items: center;
+}
+
+.strength{
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #817D92;
+}
+
+.strength-text{
+  margin-left: 60px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.strength-marks{
+    display: flex;
+}
+
+#strength-indicator {
+  width: 10px;
+  height: 28px;
+  background-color: transparent;
+  margin-left: 10px;
+}
+
+#strength-indicator.strong {
+    border: 1px solid #fff;
+}
+
+#strength-indicator.medium {
+  border: 1px solid #fff;
+}
+
+#strength-indicator.weak {
+  border: 1px solid #fff;
+}
+
+#strength-indicator.too-weak {
+  border: 1px solid #fff;
+}
+
+#generate-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #A4FFAF;
+  color: #24232C;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin: 23px auto;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+
+#generate-btn:hover{
+  border: 1px solid #A4FFAF;
+  background: transparent;
+  color: #A4FFAF;
+}
+
+#generate-btn:hover .arrow-icon{
+  fill: #A4FFAF;
+}
+
+#length-value{
+    color: #A4FFAF;
+}
+
+.notify-copy{
+  position: absolute;
+  top: -10px;
+  right: 0;
+  color: #fff;
+  font-weight: 600;
+  opacity: 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none; 
+  background: linear-gradient(to right, #A4FFAF 50%, #18171F 50%);
+  transition: background 0.3s ease;
+  margin: 10px auto;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 12px; 
+  height: 12px; 
+  background: #FFF;
+  transform: scale(1.5);
+  border-radius: 50%; 
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1280px){
+  .password-generator {
+  width: 400px;
+}
+}
