@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   
@@ -12,27 +11,31 @@
 <body>
   <header>
     <h1>Dictionary</h1>
+
     <nav class="navBar">
       <div class="logo">
-        <img src="./assets/images/logo.svg" alt="logo" srcset="">
+        <img src="./assets/images/logo.svg" alt="logo">
       </div>
-      <div >
-        <select name="fonts" id="fonts" class="fonts">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-        </select>
 
-        <div class="modes">
+      <div>
+        <div class="custom-dropdown">
+          <button class="dropdown-button"><span class="option">Inter</span> <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8"><path fill="none" stroke="#A445ED" stroke-width="1.5" d="m1 1 6 6 6-6"/></svg></button>
+          <ul class="dropdown-options">
+              <li data-value="Inter">Inter</li>
+              <li data-value="Lora">Lora</li>
+              <li data-value="Inconsolata">Inconsolata</li>
+          </ul>
+      </div>
+
+        <div class="modesContainer">
           <label class="switch">
-            <input type="checkbox" checked>
+            <input type="checkbox" class="toggle-theme">
             <span class="slider round"></span>
           </label>
           <div class="darkMode">
-            <img src="./assets/images/icon-moon.svg" alt="moon" srcset="">
+            <img class= "mode-icon" src="./assets/images/icon-moon.svg" alt="moon">
           </div>
-        </div>
-        
+        </div> 
       </div>
     </nav>
   </header>
@@ -41,68 +44,73 @@
     <section>
       <article>
         <div class="searchContainer">
-          <input type="search" name="search" id="search">
-          <span>
+          <input type="text" name="search" id="search" class="wordInput" autocomplete="off">
+          <button class="searchBtn">
             <img src="assets/images/icon-search.svg" alt="search">
-          </span>
+          </button>
         </div>
-        <span class="error">Whoops, can't be empty</span>
+        <p class="no-input">Whoops, can't be empty</p>
       </article>
     </section>
 
-    <section>
+    <section class="dictionary">
       <div class="wordContainer">
         <div>
           <article>
-             <h2 class="word">Keyboard</h2>
-             <span class="phonetic">/'ki:bc:d/</span>
+             <h2 class="searchedWord"></h2>
+             <span class="phonetic"></span>
           </article>
           </div>
           <span class="audio">
-            <img src="assets/images/icon-play.svg" alt="play">
+            <svg id="play-audio" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75"><g  fill-rule="evenodd"><circle cx="37.5" cy="37.5" r="37.5" /><path d="M29 27v21l21-10.5z"/></g></svg>
           </span>
       </div>
-    </section>
-
-    <section>
-      <div class="partOfSpeachContainer">
-          <span class="partOfSpeach">noun</span>
+  
+      <div class="partOfSpeechContainer">
+          <span class="partOfSpeech">noun</span>
           <span class="line"></span>
         </div>
         <div class="meaning">
           <article>
             <h2 class="miniTitle">Meaning</h2>
-            <ul>
-              <li>(etc.) A set of keys used to operate a typewriter, computer etc.</li>
-              <li>A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.</li>
-              <li>A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device.</li>
+            <ul class="definitions">
             </ul>
           </article>
         </div>
-      </section>
 
-      <span class="miniTitle synonym">Synonyms</span> <span class="synonym-word miniTitle"> electronic keyboard</span>
-      
-      <section>
-         <div class="partOfSpeachContainer">
-          <span class="partOfSpeach">verb</span>
+        <span class="miniTitle synonym">Synonyms</span> <span class="synonym-word miniTitle"></span>
+         <div class="partOfSpeechContainer">
+          <span class="partOfSpeech verbSpeech">verb</span>
           <span class="line"></span>
         </div>
+
         <div class="synonyms">
           <h2 class="miniTitle">Meaning</h2>
             <article>
-              <ul>
-                <li>typewriter</li>
-                <li>input device</li>
-                <li>keyboard</li>
+              <ul class="verbs">
               </ul>
             </article>
         </div>
+
+        <footer class="footer">
+          <p class="linkContainer">source <a class="link" href="" target="_blank">www.wikepedia.com</a> <span>  <img class="newWindow" src="assets/images/icon-new-window.svg" alt=""></span></p>
+        </footer>
       </section>
 
-      <footer>
-        <h4 class="linkContainer">source <span class="link">www.wikepedia.com</span> <span><img class="newWindow" src="assets/images/icon-new-window.svg" alt=""></span></h4>
-      </footer>
+      <aside>
+        <div class="errorContainer">
+          <p class="emoji">&#128529</p>
+          <div>
+            <article>
+              <h3 class="errorTitle"></h3>
+             <p class="errorMessage"></p>
+            </article>
+          </div>
+        </div>
+      </aside>
+
   </main>
+
+  <script src="./script.js"></script>
 </body>
 </html>
