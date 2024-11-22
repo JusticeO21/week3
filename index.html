@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Dictionary web app</title>
+</head>
+<body>
+  <header>
+    <h1>Dictionary</h1>
+
+    <nav class="navBar">
+      <div class="logo">
+        <img src="./assets/images/logo.svg" alt="logo">
+      </div>
+
+      <div>
+        <div class="custom-dropdown">
+          <button class="dropdown-button"><span class="option">Inter</span> <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8"><path fill="none" stroke="#A445ED" stroke-width="1.5" d="m1 1 6 6 6-6"/></svg></button>
+          <ul class="dropdown-options">
+              <li data-value="Inter">Inter</li>
+              <li data-value="Lora">Lora</li>
+              <li data-value="Inconsolata">Inconsolata</li>
+          </ul>
+      </div>
+
+        <div class="modesContainer">
+          <label class="switch">
+            <input type="checkbox" class="toggle-theme">
+            <span class="slider round"></span>
+          </label>
+          <div class="darkMode">
+            <img class= "mode-icon" src="./assets/images/icon-moon.svg" alt="moon">
+          </div>
+        </div> 
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <article>
+        <div class="searchContainer">
+          <input type="text" name="search" id="search" class="wordInput" autocomplete="off">
+          <button class="searchBtn">
+            <img src="assets/images/icon-search.svg" alt="search">
+          </button>
+        </div>
+        <p class="no-input">Whoops, can't be empty</p>
+      </article>
+    </section>
+
+    <section class="dictionary">
+      <div class="wordContainer">
+        <div>
+          <article>
+             <h2 class="searchedWord"></h2>
+             <span class="phonetic"></span>
+          </article>
+          </div>
+          <span class="audio">
+            <svg id="play-audio" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75"><g  fill-rule="evenodd"><circle cx="37.5" cy="37.5" r="37.5" /><path d="M29 27v21l21-10.5z"/></g></svg>
+          </span>
+      </div>
+  
+      <div class="partOfSpeechContainer">
+          <span class="partOfSpeech">noun</span>
+          <span class="line"></span>
+        </div>
+        <div class="meaning">
+          <article>
+            <h2 class="miniTitle">Meaning</h2>
+            <ul class="definitions">
+            </ul>
+          </article>
+        </div>
+
+        <span class="miniTitle synonym">Synonyms</span> <span class="synonym-word miniTitle"></span>
+         <div class="partOfSpeechContainer">
+          <span class="partOfSpeech verbSpeech">verb</span>
+          <span class="line"></span>
+        </div>
+
+        <div class="synonyms">
+          <h2 class="miniTitle">Meaning</h2>
+            <article>
+              <ul class="verbs">
+              </ul>
+            </article>
+        </div>
+
+        <footer class="footer">
+          <p class="linkContainer">source <a class="link" href="" target="_blank">www.wikepedia.com</a> <span>  <img class="newWindow" src="assets/images/icon-new-window.svg" alt=""></span></p>
+        </footer>
+      </section>
+
+      <aside>
+        <div class="errorContainer">
+          <p class="emoji">&#128529</p>
+          <div>
+            <article>
+              <h3 class="errorTitle"></h3>
+             <p class="errorMessage"></p>
+            </article>
+          </div>
+        </div>
+      </aside>
+
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
